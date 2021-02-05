@@ -1,13 +1,16 @@
-/**
- * Đầu vào (input)
- *  - luongNhanVien = 0
- *  - luongMotNgay: 100000
- *  - soNgayLam: 30
- * Xử lý
- *  - luongNhanVien = luongMotNgay * soNgayLam
- * Đầu ra (output)
- * - xuất lương 
- */
+/*
+ * Nhập điểm môn 1, môn 2, môn 3, điểm chuẩn, đối tượng, khu vực
+ * 
+ * Khu Vực A=2, B=1, C=0.5, X=0 khu vực không thuộc diện ưu tiên
+ * Đối tượng 1= 2.5; Đối tượng 2= 1.5; Đối tượng 3= 1 Đối tượng 0= 0 không thuộc diện ưu tiên
+ * Hàm tinhDiemKhuVuc(int khuVuc)
+ * Hàm tinhDiemUuTien(int doiTuong)
+ * Hàm xetDiemLiet(float mon1, float mon2, float mon3)
+ * Hàm tinhTongDiem
+ * Xet (tổng điểm >= điểm chuẩn) và (không có điểm 0) thì đậu, ngược lại là rớt
+ * 
+ * In ra thí sinh đó đậu hay rớt và tổng số điểm đạt được
+ * */
 
 function getEle(id) {
     return document.getElementById(id);
@@ -53,7 +56,8 @@ xuLy = () => {
     } else {
         kqEx1 = ("Bạn có điểm liệt, rớt chắc rồi !.");
     }
-    //in kết quả
+
+    //In kết quả
     console.log(kqEx1);
     getEle('kqEx1').style.display = "block";
     getEle('kqEx1').innerHTML = kqEx1;

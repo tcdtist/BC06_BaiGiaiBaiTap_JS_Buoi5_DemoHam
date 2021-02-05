@@ -5,7 +5,7 @@
 }
 
 body {
-  height: 1000px;
+  height: 1250px;
   position: relative;
 }
 
@@ -92,6 +92,10 @@ body {
 
 .tab-content .tab-pane .card .card-body .card-text .form-group .form-control.output-ex {
   width: 80% !important;
+}
+
+.tab-content .tab-pane .card .card-body .card-text .form-group .selected {
+  margin: 0.625rem 0;
 }
 
 .tab-content .tab-pane .card .images-ex {

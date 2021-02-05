@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Bài tập JS Buổi 1</title>
+    <title>Bài tập JS Buổi 5 - Lớp BC06 - Hàm</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +25,7 @@
 <body class="bg-dark">
 
     <!-- title -->
-    <h1 class="title">Bài tập JS Buổi 1 - Lớp BC06</h1>
+    <h1 class="title">Bài tập JS Buổi 5 - Lớp BC06 - Hàm</h1>
 
     <!-- layout bài tập -->
     <section id="bai-tap" class="m-5 rounded">
@@ -44,9 +44,6 @@
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="pill" href="#ex4">Bài tập 4</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="pill" href="#ex5">Bài tập 5</a>
-                </li>
             </ul>
 
             <!-- Tab panes -->
@@ -55,29 +52,44 @@
                     <div class="card container-fluid">
                         <div class="row">
                             <div class="card-body col-7">
-                                <h4 class="card-title">Bài 1: Tính tiền lương nhân viên</h4>
+                                <h4 class="card-title">Bài 1: Quản lý tuyển sinh</h4>
                                 <div class="card-text">
                                     <div class="form-group">
-                                        <input type="text" disabled class="form-control"
-                                            placeholder="Lương 1 ngày: 100,000 VNĐ">
-                                        <input type="text" disabled class="form-control"
-                                            placeholder="Công thức tính lương = số ngày làm * lương 1 ngày">
-                                        <label>Mời bạn nhập vào số ngày làm: </label>
-                                        <input type="text" class="form-control money" value="" name="" id="soNgayLam"
+                                        <label>Mời bạn nhập điểm môn thứ nhất: </label>
+                                        <input type="text" class="form-control money" value="" name="" id="mon1"
                                             placeholder="">
-                                        <div id="txtThongBaoEx1" class="form-text text-muted">(*) Số ngày làm cần > 0 và
-                                            không
-                                            quá
-                                            1000</div>
-                                        <button type="submit" id="tinhEx1" class="btn btn-success my-2">Tính
-                                            tiền</button>
+                                        <label>Mời bạn nhập điểm môn thứ hai: </label>
+                                        <input type="text" class="form-control money" value="" name="" id="mon2"
+                                            placeholder="">
+                                        <label>Mời bạn nhập điểm môn thứ ba: </label>
+                                        <input type="text" class="form-control money" value="" name="" id="mon3"
+                                            placeholder="">
+                                        <div id="txtThongBaoEx1" class="form-text text-muted">(*) Điểm nhập là số và
+                                            trong khoảng 0 -> 10</div>
+                                        <label>Mời bạn nhập điểm chuẩn: </label>
+                                        <input type="text" class="form-control money" value="" name="" id="diemChuan"
+                                            placeholder="">
+                                        <label>Mời bạn chọn đối tượng: </label><br>
+                                        <select class="selected" id="nhapDoiTuong">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select><br>
+                                        <label>Mời bạn chọn khu vực: </label><br>
+                                        <select class="selected" id="nhapKhuVuc">
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                        </select><br>
+                                        <button type="submit" id="tinhEx1" class="btn btn-success my-3">Tính điểm và
+                                            xuất kết quả</button>
                                         <div id="kqEx1" class="bg-white p-2" style="border-radius: 3px; display: none;">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="images-ex col-5">
-                                <img src="./images/bai_tap1.png" alt="bai_tap1.png">
+                                <img src="./images/bai1-quan-ly-tuyen-sinh.png" alt="bai1-quan-ly-tuyen-sinh.png">
                             </div>
                         </div>
                     </div>
@@ -87,7 +99,7 @@
                     <div class="card container-fluid">
                         <div class="row">
                             <div class="card-body col-7">
-                                <h4 class="card-title">Bài 2: Tính giá trị trung bình</h4>
+                                <h4 class="card-title">Bài 2: Tính thuế thu nhập cá nhân</h4>
                                 <div class="card-text">
                                     <div class="form-group">
                                         <label>Mời bạn nhập số thực thứ nhất: </label>
@@ -122,7 +134,7 @@
                     <div class="card container-fluid">
                         <div class="row">
                             <div class="card-body col-7">
-                                <h4 class="card-title">Bài 3: Quy đổi tiền</h4>
+                                <h4 class="card-title">Bài 3: Tính tiền điện</h4>
                                 <div class="card-text">
                                     <div class="form-group">
                                         <input type="text" disabled class="form-control"
@@ -151,7 +163,7 @@
                     <div class="card container-fluid">
                         <div class="row">
                             <div class="card-body col-7">
-                                <h4 class="card-title">Bài 4: Tính diện tích, chu vi hình chữ nhật</h4>
+                                <h4 class="card-title">Bài 4: Tính tiền cáp</h4>
                                 <div class="card-text">
                                     <div class="form-group">
                                         <label>Mời bạn nhập chiều dài: </label>
@@ -174,32 +186,6 @@
                             </div>
                             <div class="images-ex col-5">
                                 <img src="./images/bai_tap4.png" alt="bai_tap4.png">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane container fade" id="ex5">
-                    <div class="card container-fluid">
-                        <div class="row">
-                            <div class="card-body col-7">
-                                <h4 class="card-title">Bài 5: Tính tổng 2 ký số</h4>
-                                <div class="card-text">
-                                    <div class="form-group">
-                                        <label>Mời bạn nhập vào 1 số có hai chữ số: </label>
-                                        <input type="text" class="form-control" value="" name="" id="soNhap_5"
-                                            placeholder="">
-                                        <div id="txtThongBaoEx5" class="form-text text-muted">(*) Số nhập phải là số có
-                                            hai
-                                            chữ số.</div>
-                                        <button type="submit" id="tinhEx5" class="btn btn-success my-2">Tính
-                                            tổng</button>
-                                        <div id="kqEx5" class="bg-white p-2" style="border-radius: 3px; display: none;">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="images-ex col-5">
-                                <img src="./images/bai_tap5.png" alt="bai_tap5.png">
                             </div>
                         </div>
                     </div>
