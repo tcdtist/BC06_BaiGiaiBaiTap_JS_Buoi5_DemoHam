@@ -1,0 +1,8 @@
+@mixin bd-bottom {
+    border-bottom: 0.0625rem solid #000000;
+    padding-bottom: 0.3125rem;
+}
+
+@mixin bd-radius {
+    border-radius: 0.35rem;
+}

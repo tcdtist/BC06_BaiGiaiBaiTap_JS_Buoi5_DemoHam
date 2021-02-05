@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Bài tập JS Buổi 1</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- font chữ -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"> -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <!-- link font-awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+    <!-- link css -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="bg-dark">
+
+    <!-- title -->
+    <h1 class="title">Bài tập JS Buổi 1 - Lớp BC06</h1>
+
+    <!-- layout bài tập -->
+    <section id="bai-tap" class="m-5 rounded">
+        <div class="container bg-light p-3">
+            <!-- Nav pills -->
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#ex1">Bài tập 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#ex2">Bài tập 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#ex3">Bài tập 3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#ex4">Bài tập 4</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#ex5">Bài tập 5</a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content mt-5">
+                <div class="tab-pane  active" id="ex1">
+                    <div class="card container-fluid">
+                        <div class="row">
+                            <div class="card-body col-7">
+                                <h4 class="card-title">Bài 1: Tính tiền lương nhân viên</h4>
+                                <div class="card-text">
+                                    <div class="form-group">
+                                        <input type="text" disabled class="form-control"
+                                            placeholder="Lương 1 ngày: 100,000 VNĐ">
+                                        <input type="text" disabled class="form-control"
+                                            placeholder="Công thức tính lương = số ngày làm * lương 1 ngày">
+                                        <label>Mời bạn nhập vào số ngày làm: </label>
+                                        <input type="text" class="form-control money" value="" name="" id="soNgayLam"
+                                            placeholder="">
+                                        <div id="txtThongBaoEx1" class="form-text text-muted">(*) Số ngày làm cần > 0 và
+                                            không
+                                            quá
+                                            1000</div>
+                                        <button type="submit" id="tinhEx1" class="btn btn-success my-2">Tính
+                                            tiền</button>
+                                        <div id="kqEx1" class="bg-white p-2" style="border-radius: 3px; display: none;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-ex col-5">
+                                <img src="./images/bai_tap1.png" alt="bai_tap1.png">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane container fade" id="ex2">
+                    <div class="card container-fluid">
+                        <div class="row">
+                            <div class="card-body col-7">
+                                <h4 class="card-title">Bài 2: Tính giá trị trung bình</h4>
+                                <div class="card-text">
+                                    <div class="form-group">
+                                        <label>Mời bạn nhập số thực thứ nhất: </label>
+                                        <input type="text" class="form-control" name="" id="soThuc1" placeholder="">
+                                        <label>Mời bạn nhập số thực thứ hai: </label>
+                                        <input type="text" class="form-control" name="" id="soThuc2" placeholder="">
+                                        <label>Mời bạn nhập số thực thứ ba: </label>
+                                        <input type="text" class="form-control" name="" id="soThuc3" placeholder="">
+                                        <label>Mời bạn nhập số thực thứ tư: </label>
+                                        <input type="text" class="form-control" name="" id="soThuc4" placeholder="">
+                                        <label>Mời bạn nhập số thực thứ năm: </label>
+                                        <input type="text" class="form-control money" value="" name="" id="soThuc5"
+                                            placeholder="">
+                                        <div id="txtThongBaoEx2" class="form-text text-muted">(*) Số thực cần >= 0 và
+                                            dùng
+                                            dấu
+                                            "."</div>
+                                        <button type="submit" id="tinhEx2" class="btn btn-success my-2">Tính
+                                            giá trị</button>
+                                        <div id="kqEx2" class="bg-white p-2" style="border-radius: 3px; display: none;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-ex col-5">
+                                <img src="./images/bai_tap2.png" alt="bai_tap2.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane container fade" id="ex3">
+                    <div class="card container-fluid">
+                        <div class="row">
+                            <div class="card-body col-7">
+                                <h4 class="card-title">Bài 3: Quy đổi tiền</h4>
+                                <div class="card-text">
+                                    <div class="form-group">
+                                        <input type="text" disabled class="form-control"
+                                            placeholder="Giá USD hiện nay: 23.500 VNĐ">
+                                        <label>Mời bạn nhập vào số tiền cần đổi: </label>
+                                        <input type="text" class="form-control money" name="" id="soTienCanDoi" value=""
+                                            placeholder="">
+                                        <div id="txtThongBaoEx3" class="form-text text-muted">(*) Số tiền làm cần > 0 và
+                                            không
+                                            chứa ký tự đặc biệt
+                                        </div>
+                                        <button type="submit" id="tinhEx3" class="btn btn-success my-2">Đổi
+                                            tiền</button>
+                                        <div id="kqEx3" class="bg-white p-2" style="border-radius: 3px; display: none;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-ex col-5">
+                                <img src="./images/bai_tap3.png" alt="bai_tap3.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane container fade" id="ex4">
+                    <div class="card container-fluid">
+                        <div class="row">
+                            <div class="card-body col-7">
+                                <h4 class="card-title">Bài 4: Tính diện tích, chu vi hình chữ nhật</h4>
+                                <div class="card-text">
+                                    <div class="form-group">
+                                        <label>Mời bạn nhập chiều dài: </label>
+                                        <input type="text" class="form-control" value="" name="" id="chieuDai"
+                                            placeholder="">
+                                        <label>Mời bạn nhập chiều rộng: </label>
+                                        <input type="text" class="form-control" value="" name="" id="chieuRong"
+                                            placeholder="">
+                                        <div id="txtThongBaoEx4" class="form-text text-muted">(*) Chiều dài cần > chiều
+                                            rộng
+                                            và cả 2 phải là số</div>
+                                        <button type="submit" id="tinhEx4_cv" class="btn btn-success my-2 mr-2">Tính
+                                            chu vi</button>
+                                        <button type="submit" id="tinhEx4_dt" class="btn btn-primary my-2">Tính
+                                            diện tích</button>
+                                        <div id="kqEx4" class="bg-white p-2" style="border-radius: 3px; display: none;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-ex col-5">
+                                <img src="./images/bai_tap4.png" alt="bai_tap4.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane container fade" id="ex5">
+                    <div class="card container-fluid">
+                        <div class="row">
+                            <div class="card-body col-7">
+                                <h4 class="card-title">Bài 5: Tính tổng 2 ký số</h4>
+                                <div class="card-text">
+                                    <div class="form-group">
+                                        <label>Mời bạn nhập vào 1 số có hai chữ số: </label>
+                                        <input type="text" class="form-control" value="" name="" id="soNhap_5"
+                                            placeholder="">
+                                        <div id="txtThongBaoEx5" class="form-text text-muted">(*) Số nhập phải là số có
+                                            hai
+                                            chữ số.</div>
+                                        <button type="submit" id="tinhEx5" class="btn btn-success my-2">Tính
+                                            tổng</button>
+                                        <div id="kqEx5" class="bg-white p-2" style="border-radius: 3px; display: none;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="images-ex col-5">
+                                <img src="./images/bai_tap5.png" alt="bai_tap5.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright text-white mt-5 d-flex">
+            <i class="fas fa-copyright text-white mr-1" style="height: 16px;"></i>
+            <p>2021 - GitHub, tcdtist - NoCopy</p>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+    <!-- link format money -->
+    <!-- <script src="./js/simple.money.format.js"></script> -->
+    <!-- <script>
+        $('.money').simpleMoneyFormat();
+    </script> -->
+    <!-- DÙNG PHẢI XÓA DẤU "," TRƯỚC KHI TÍNH => RẮC RỐI -->
+
+    <!-- link js bài tập -->
+    <script src="./js_bai_tap/Ex1.js"></script>
+    <script src="./js_bai_tap/Ex2.js"></script>
+    <script src="./js_bai_tap/Ex3.js"></script>
+    <script src="./js_bai_tap/Ex4.js"></script>
+    <script src="./js_bai_tap/Ex5.js"></script>
+
+</body>
+
+</html>

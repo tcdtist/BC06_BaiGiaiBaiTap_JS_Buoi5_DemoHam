@@ -1,0 +1,25 @@
+#bai-tap {
+    .container {
+        @include bd-radius;
+        .nav {
+            // border-bottom: 0.0625rem solid #000000;
+            // padding-bottom: 0.3125rem;
+            @include bd-bottom;
+            .nav-link {
+                background-color: black;
+                margin-right: 0.625rem;
+                color: #ffffff;
+                width: 6.25rem;
+                text-align: center;
+                &:hover {
+                    color: yellow;
+                }
+                &.active {
+                    background-color: yellow !important;
+                    color: black !important;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

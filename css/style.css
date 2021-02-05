@@ -1,0 +1,108 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+body {
+  height: 1000px;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+
+.thong-bao {
+  color: red !important;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+#bai-tap .container {
+  border-radius: 0.35rem;
+}
+
+#bai-tap .container .nav {
+  border-bottom: 0.0625rem solid #000000;
+  padding-bottom: 0.3125rem;
+}
+
+#bai-tap .container .nav .nav-link {
+  background-color: black;
+  margin-right: 0.625rem;
+  color: #ffffff;
+  width: 6.25rem;
+  text-align: center;
+}
+
+#bai-tap .container .nav .nav-link:hover {
+  color: yellow;
+}
+
+#bai-tap .container .nav .nav-link.active {
+  background-color: yellow !important;
+  color: black !important;
+  font-weight: 500;
+}
+
+.tab-content .tab-pane {
+  padding: 0;
+}
+
+.tab-content .tab-pane .card {
+  background-color: cadetblue;
+  border-color: darkblue;
+}
+
+.tab-content .tab-pane .card .card-body .card-title {
+  display: inline;
+  border-bottom: 0.0625rem solid #000000;
+  padding-bottom: 0.3125rem;
+  margin-bottom: 2rem;
+}
+
+.tab-content .tab-pane .card .card-body .card-text {
+  margin-top: 2rem;
+}
+
+.tab-content .tab-pane .card .card-body .card-text .form-group label {
+  margin: 0;
+}
+
+.tab-content .tab-pane .card .card-body .card-text .form-group small {
+  color: #ffffffda !important;
+}
+
+.tab-content .tab-pane .card .card-body .card-text .form-group .form-control {
+  width: 70%;
+  margin-bottom: 0.625rem;
+}
+
+.tab-content .tab-pane .card .card-body .card-text .form-group .form-control::placeholder {
+  color: #000000;
+}
+
+.tab-content .tab-pane .card .card-body .card-text .form-group .form-control.output-ex {
+  width: 80% !important;
+}
+
+.tab-content .tab-pane .card .images-ex {
+  padding: 1.25rem;
+  padding-top: 4.5rem;
+}
+
+.tab-content .tab-pane .card .images-ex img {
+  display: block;
+  width: 100%;
+  height: cover;
+  border-radius: 0.35rem;
+}
+/*# sourceMappingURL=style.css.map */

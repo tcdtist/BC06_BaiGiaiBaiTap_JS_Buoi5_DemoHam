@@ -1,0 +1,47 @@
+.tab-content {
+    .tab-pane {
+        padding: 0;
+        .card {
+            background-color: cadetblue;
+            border-color: darkblue;
+            .card-body {
+                .card-title {
+                    display: inline;
+                    @include bd-bottom;
+                    margin-bottom: 2rem;
+                }
+                .card-text {
+                    margin-top: 2rem;
+                    .form-group {
+                        label {
+                            margin: 0;
+                        }
+                        small {
+                            color: #ffffffda !important;
+                        }
+                        .form-control {
+                            width: 70%;
+                            margin-bottom: 0.625rem;
+                            &::placeholder {
+                                color: #000000;
+                            }
+                            &.output-ex {
+                                width: 80% !important;
+                            }
+                        }
+                    }
+                }
+            }
+            .images-ex {
+                padding: 1.25rem;
+                padding-top: 4.5rem;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: cover;
+                    @include bd-radius;
+                }
+            }
+        }
+    }
+}
