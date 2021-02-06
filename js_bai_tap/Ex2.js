@@ -3,7 +3,7 @@ function getEle(id) {
 }
 
 getEle('tinhEx2').addEventListener('click', () => {
-    xuLy();
+    xuLyEx2();
 });
 
 const THUE_SUAT_60_DAU = 0.05;
@@ -14,7 +14,7 @@ const THUE_SUAT_384DEN624 = 0.25;
 const THUE_SUAT_624DEN960 = 0.3;
 const THUE_SUAT_TREN960 = 0.35;
 
-xuLy = () => {
+xuLyEx2 = () => {
 
     //Đầu vào
     var hoTen;

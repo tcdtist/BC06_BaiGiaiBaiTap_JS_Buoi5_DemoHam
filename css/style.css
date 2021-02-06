@@ -109,4 +109,17 @@ body {
   height: cover;
   border-radius: 0.35rem;
 }
+
+/*start ------------- for radio button styles*/
+ul li {
+  list-style: none;
+}
+
+ul li label {
+  font-weight: 600;
+}
+
+input[type="radio"]:checked ~ label {
+  color: yellow;
+}
 /*# sourceMappingURL=style.css.map */

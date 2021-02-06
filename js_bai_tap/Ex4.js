@@ -1,110 +1,70 @@
-/**
- * Đầu vào (input)
- *  - chieuDai = 0
- *  - chieuRong = 0
- *  - dienTich = 0
- *  - chuVi = 0
- * Xử lý
- *  - dienTich = chieuDai * chieuRong
- *  - chuVi = (chieuDai + chieuRong) * 2
- * Đầu ra (output)
- *  - Xuất diện tích và chu vi của hình chữ nhật
- */
 
 function getEle(id) {
     return document.getElementById(id);
 }
 
-getEle('tinhEx4_cv').addEventListener('click', () => {
-
-    //Đầu vào
-    var chieuDai = parseFloat(getEle("chieuDai").value);
-    var chieuRong = parseFloat(getEle("chieuRong").value);
-    var chuVi = 0;
-
-    //Xét điều kiện
-    if (chieuDai <= 0 || chieuRong <= 0) return alert('Chiều dài hoặc chiều rộng cần lớn hơn 0');
-    if (chieuDai <= chieuRong) return alert('Chiều dài cần dài hơn chiều rộng.');
-
-    //Xử lý
-    chuVi = (chieuDai + chieuRong) * 2;
-
-    //Đầu ra
-    var kqEx4_cv = "Chu vi hình chữ nhật là:     " + chuVi;
-    console.log(kqEx4_cv);
-    getEle('kqEx4').style.display = "block";
-    getEle('kqEx4').innerHTML = kqEx4_cv;
+getEle('tinhEx4').addEventListener('click', () => {
+    xuLyEx4();
 });
 
-getEle('tinhEx4_dt').addEventListener('click', () => {
+//Khởi tạo các biến hằng số
+const PHIXULYHOADON_NHADAN = 4.5, PHIXULYHOADON_DOANHNGHIEP = 15;
+const PHIDICHVUCOBAN_NHADAN = 20.5, PHIDICHVUCOBAN_DOANHNGHIEP_10KETNOIDAU = 75, PHIKETNOITHEM = 5;
+const PHITHUEKENHCAOCAP_NHADAN = 7.5, PHITHUEKENHCAOCAP_DOANHNGHIEP = 50;
 
-    //Đầu vào
-    var chieuDai = parseFloat(getEle("chieuDai").value);
-    var chieuRong = parseFloat(getEle("chieuRong").value);
-    var dienTich = 0;
-
-    //Xét điều kiện
-    if (chieuDai <= 0 || chieuRong <= 0) return alert('Chiều dài hoặc chiều rộng cần lớn hơn 0');
-    if (chieuDai < chieuRong) return alert('Chiều dài cần dài hơn chiều rộng.');
-
-    //Xử lý
-    dienTich = chieuDai * chieuRong;
-
-    //Đầu ra
-    var kqEx4_dt = "Diện tích hình chữ nhật là:     " + dienTich;
-    console.log(kqEx4_dt);
-    getEle('kqEx4').style.display = "block";
-    getEle('kqEx4').innerHTML = kqEx4_dt;
-});
-
-final static float PHIXULYHOADON_NHADAN = 4.5f, PHIXULYHOADON_DOANHNGHIEP = 15;
-final static float PHIDICHVUCOBAN_NHADAN = 20.5f, PHIDICHVUCOBAN_DOANHNGHIEP_10KETNOIDAU = 75, PHIKETNOITHEM = 5;
-final static float PHITHUEKENHCAOCAP_NHADAN = 7.5f, PHITHUEKENHCAOCAP_DOANHNGHIEP = 50;
-
-public static void main(String[] args) {
+//Hàm xử lý
+xuLyEx4 = () => {
     // Đầu vào
-    Scanner scanner = new Scanner(System.in);
-    int loaiKhachHang = 0, maKhachHang = 0, soTaiKhoan = 0, soKenhDaThue = 0;
-    double tongTien = 0;
-    boolean flag = false;
+    var loaiKhachHang = 0, maKhachHang = 0, soTaiKhoan = 0, soKenhDaThue = 0;
+    var tongTien = 0;
+    var kqEx4 = getEle('kqEx4');
+    var flag = false;
 
     // Nhập dữ liệu
-    System.out.println("-------------->> CHƯƠNG TRÌNH TÍNH TIỀN CÁP <<---------------");
-    System.out.println("Mời bạn nhập vào loại khách hàng cần tính tiền: (1. Nhà dân - 2. Doanh nghiệp)");
-    loaiKhachHang = Integer.parseInt(scanner.nextLine());
+    // Lấy loại khách hàng cần tính tiền: (1. Nhà dân - 2. Doanh nghiệp)
+    if (getEle('nhaDan').checked) loaiKhachHang = 1;
+    if (getEle('doanhNghiep').checked) loaiKhachHang = 2;
 
+    //Xử lý
     switch (loaiKhachHang) {
         case 1:
         case 2:
-            System.out.println("Mời bạn nhập mã khách hàng: (mã khách hàng là số. Vd: 123)");
-            maKhachHang = Integer.parseInt(scanner.nextLine());
-            System.out.println("Mời bạn nhập số tài khoản: (số tài khoản là số. Vd: 123456789)");
-            soTaiKhoan = Integer.parseInt(scanner.nextLine());
-            System.out.println("Số kênh cao cấp đã thuê: ");
-            soKenhDaThue = Integer.parseInt(scanner.nextLine());
+            // Lấy mã khách hàng: (mã khách hàng là số. Vd: 123)
+            maKhachHang = parseInt(getEle("maKhachHang").value);
+            // Lấy số tài khoản: (số tài khoản là số. Vd: 123456789)
+            soTaiKhoan = parseInt(getEle("soTaiKhoan").value);
+            //Lấy số kênh cao cấp đã thuê:
+            soKenhDaThue = parseInt(getEle("soKenhDaThue").value);
 
-            // gọi hàm xử lý
-            tongTien = xuLy(loaiKhachHang, soKenhDaThue, scanner);
+            //Check điều kiện nhập
+            if (soKenhDaThue <= 0) return alert('Số kênh cao cấp đã thuê cần > 0.');
+
+            // gọi hàm tinhTongTien
+            tongTien = tinhTongTien(loaiKhachHang, soKenhDaThue);
             flag = true;
             break;
+        default:
+            alert('Loại khách hàng không được bỏ trống!');
     }
 
     // Đầu ra chương trình
-    if (flag) {
-        System.out.println("---------->> HÓA ĐƠN <<----------");
-        System.out.println("Loại khách hàng: " + loaiKhachHang);
-        System.out.println("Mã khách hàng: " + maKhachHang);
-        System.out.println("Số tài khoản: " + soTaiKhoan);
-        System.out.println(">> Tổng tiền phải trả: " + tongTien + " VNĐ.");
-    } else {
-        System.out.println("Bạn nhập sai dữ liệu, vui lòng chạy lại chương trình và nhập lại ! >>>>>");
+    if (tongTien != undefined && flag) {
+        kqEx4.style.display = 'block';
+        kqEx4.innerHTML = "HÓA ĐƠN:";
+        kqEx4.appendChild(document.createElement('BR'));
+        kqEx4.innerHTML += "- Loại khách hàng: " + loaiKhachHang;
+        kqEx4.appendChild(document.createElement('BR'));
+        kqEx4.innerHTML += "- Mã khách hàng: " + maKhachHang;
+        kqEx4.appendChild(document.createElement('BR'));
+        kqEx4.innerHTML += "- Số tài khoản: " + soTaiKhoan;
+        kqEx4.appendChild(document.createElement('BR'));
+        kqEx4.innerHTML += "-> Tổng tiền phải trả: " + tongTien + " $.";
     }
-
-    scanner.close();
 }
 
-public static double xuLy(int loaiKhachHang, int soKenhDaThue, Scanner scanner) {
-    double tongTien = 0;
+//Hàm tính tổng tiền
+tinhTongTien = (loaiKhachHang, soKenhDaThue) => {
+    var tongTien = 0;
 
     switch (loaiKhachHang) {
         case 1: // Nhà dân
@@ -114,21 +74,19 @@ public static double xuLy(int loaiKhachHang, int soKenhDaThue, Scanner scanner) 
 
         default: // Doanh nghiệp (vì loaiKhachHang chắc chắn = 1 hoặc 2 thì mới chạy vô hàm này nên để default luôn)
             // Đầu vào
-            int soKetNoi;
-            float phiDichVuCoBan = 0;
+            var soKetNoi;
+            var phiDichVuCoBan = 0;
 
             // Nhập dữ liệu
-            System.out.println("Bạn có bao nhiêu kết nối: ");
-            soKetNoi = Integer.parseInt(scanner.nextLine());
+            soKetNoi = hienThiNhapKetNoiThem();
 
             // Xử lý
-            if (soKetNoi >= 0 && soKetNoi <= 10) {
+            if (soKetNoi > 0 && soKetNoi <= 10) {
                 phiDichVuCoBan = PHIDICHVUCOBAN_DOANHNGHIEP_10KETNOIDAU * soKetNoi;
             } else if (soKetNoi > 10) {
                 phiDichVuCoBan = (PHIDICHVUCOBAN_DOANHNGHIEP_10KETNOIDAU * 10) + (soKetNoi - 10) * PHIKETNOITHEM;
             } else {
-                System.out.println("Nhập sai, mời chạy lại chương trình và nhập lại!");
-                break;
+                return alert('Nhập sai, số kết nối thêm phải là số nguyên dương!');
             }
 
             // Gọi hàm tính tiền cáp
@@ -136,10 +94,22 @@ public static double xuLy(int loaiKhachHang, int soKenhDaThue, Scanner scanner) 
                 soKenhDaThue);
             break;
     }
-
-    return tongTien; // Hàm trả về giá trị tongTien (kiểu double)
+    return tongTien; // Hàm trả về giá trị tongTien
 }
 
-private static double tinhTienCap(float phiXuLyHoaDon, float phiDichVuCoBan, float phiThueKenh, int soKenhDaThue) {
+//hàm tính tiền cáp
+tinhTienCap = (phiXuLyHoaDon, phiDichVuCoBan, phiThueKenh, soKenhDaThue) => {
     return (phiXuLyHoaDon + phiDichVuCoBan + (phiThueKenh * soKenhDaThue));
+}
+
+//Hàm hiển thị nhập kết nối thêm
+hienThiNhapKetNoiThem = () => {
+    if (getEle('doanhNghiep').checked) {
+        getEle('soKetNoi_hidden').style.display = 'block';
+        var soKetNoi = parseInt(getEle("soKetNoi").value);
+    } else {
+        getEle('soKetNoi_hidden').style.display = 'none';
+    }
+    getEle('kqEx4').style.display = 'none'; //Ẩn thanh kết quả
+    return soKetNoi;
 }

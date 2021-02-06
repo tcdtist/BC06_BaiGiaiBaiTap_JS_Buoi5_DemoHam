@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
         integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
+    <!-- link magnific popup -->
+    <link rel="stylesheet" href="./css/magnific-popup.css">
+
     <!-- link css -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -89,7 +92,9 @@
                                 </div>
                             </div>
                             <div class="images-ex col-5">
-                                <img src="./images/bai1-quan-ly-tuyen-sinh.png" alt="bai1-quan-ly-tuyen-sinh.png">
+                                <img src="./images/bai1-quan-ly-tuyen-sinh.png" alt="bai1-quan-ly-tuyen-sinh.png"
+                                    class="test-popup-link" href="./images/bai1-quan-ly-tuyen-sinh.png">
+                                <p class="text-white">(*) nhấn vào ảnh để xem đề rõ hơn.</p>
                             </div>
                         </div>
                     </div>
@@ -121,7 +126,9 @@
                             </div>
                             <div class="images-ex col-5">
                                 <img src="./images/bai2-tinh-thue-thu-nhap-ca-nhan.png"
-                                    alt="bai2-tinh-thue-thu-nhap-ca-nhan.png">
+                                    alt="bai2-tinh-thue-thu-nhap-ca-nhan.png" class="test-popup-link"
+                                    href="./images/bai2-tinh-thue-thu-nhap-ca-nhan.png">
+                                <p class="text-white">(*) nhấn vào ảnh để xem đề rõ hơn.</p>
                             </div>
                         </div>
                     </div>
@@ -149,7 +156,9 @@
                                 </div>
                             </div>
                             <div class="images-ex col-5">
-                                <img src="./images/bai3-tinh-tien-dien.png" alt="bai3-tinh-tien-dien.png">
+                                <img src="./images/bai3-tinh-tien-dien.png" alt="bai3-tinh-tien-dien.png"
+                                    class="test-popup-link" href="./images/bai3-tinh-tien-dien.png">
+                                <p class="text-white">(*) nhấn vào ảnh để xem đề rõ hơn.</p>
                             </div>
                         </div>
                     </div>
@@ -161,26 +170,41 @@
                                 <h4 class="card-title">Bài 4: Tính tiền cáp</h4>
                                 <div class="card-text">
                                     <div class="form-group">
-                                        <label>Mời bạn nhập chiều dài: </label>
-                                        <input type="text" class="form-control" value="" name="" id="chieuDai"
-                                            placeholder="">
-                                        <label>Mời bạn nhập chiều rộng: </label>
-                                        <input type="text" class="form-control" value="" name="" id="chieuRong"
-                                            placeholder="">
-                                        <div id="txtThongBaoEx4" class="form-text text-muted">(*) Chiều dài cần > chiều
-                                            rộng
-                                            và cả 2 phải là số</div>
-                                        <button type="submit" id="tinhEx4_cv" class="btn btn-success my-2 mr-2">Tính
-                                            chu vi</button>
-                                        <button type="submit" id="tinhEx4_dt" class="btn btn-primary my-2">Tính
-                                            diện tích</button>
+                                        <label>Mời bạn chọn loại khách hàng cần tính tiền:</label>
+                                        <ul>
+                                            <li>
+                                                <input id="nhaDan" type="radio" name="selector"
+                                                    onclick="hienThiNhapKetNoiThem()">
+                                                <label for="nhaDan">Nhà Dân</label>
+                                            </li>
+                                            <li>
+                                                <input id="doanhNghiep" type="radio" name="selector"
+                                                    onclick="hienThiNhapKetNoiThem()">
+                                                <label for="doanhNghiep">Doanh Nghiệp</label>
+                                            </li>
+                                        </ul>
+                                        <label>Mời bạn nhập mã khách hàng: (mã khách hàng là số. Vd: 123): </label>
+                                        <input type="text" class="form-control" value="" name="" id="maKhachHang">
+                                        <label>Mời bạn nhập số tài khoản: (số tài khoản là số. Vd: 123456789): </label>
+                                        <input type="text" class="form-control" value="" name="" id="soTaiKhoan">
+                                        <label>Mời bạn nhập số Số kênh cao cấp đã thuê:</label>
+                                        <input type="text" class="form-control" value="" name="" id="soKenhDaThue">
+                                        <div id="soKetNoi_hidden" style="display: none;">
+                                            <label>Bạn có bao nhiêu kết nối:</label>
+                                            <input type="text" class="form-control" value="" name="" id="soKetNoi">
+                                        </div>
+                                        <div id="txtThongBaoEx4" class="form-text text-muted"></div>
+                                        <button type="submit" id="tinhEx4" class="btn btn-success my-2 mr-2">Tính
+                                            tiền cáp</button>
                                         <div id="kqEx4" class="bg-white p-2" style="border-radius: 3px; display: none;">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="images-ex col-5">
-                                <img src="./images/bai_tap4.png" alt="bai_tap4.png">
+                                <img src="./images/bai4-tinh-tien-cap.png" alt="bai4-tinh-tien-cap.png"
+                                    class="test-popup-link" href="./images/bai4-tinh-tien-cap.png">
+                                <p class="text-white">(*) nhấn vào ảnh để xem đề rõ hơn.</p>
                             </div>
                         </div>
                     </div>
@@ -204,20 +228,20 @@
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
 
-    <!-- link format money -->
-    <!-- <script src="./js/simple.money.format.js"></script> -->
-    <!-- <script>
-        $('.money').simpleMoneyFormat();
-    </script> -->
-    <!-- DÙNG PHẢI XÓA DẤU "," TRƯỚC KHI TÍNH => RẮC RỐI -->
-
     <!-- link js bài tập -->
     <script src="./js_bai_tap/Ex1.js"></script>
     <script src="./js_bai_tap/Ex2.js"></script>
     <script src="./js_bai_tap/Ex3.js"></script>
     <script src="./js_bai_tap/Ex4.js"></script>
-    <script src="./js_bai_tap/Ex5.js"></script>
 
+    <!-- link magnific popup -->
+    <script src="./js/jquery.magnific-popup.min.js"></script>
+    <script>
+        $('.test-popup-link').magnificPopup({
+            type: 'image'
+            // other options
+        });
+    </script>
 </body>
 
 </html>

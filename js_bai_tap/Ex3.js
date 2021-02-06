@@ -18,7 +18,7 @@ function getEle(id) {
 
 //HÀM CHẠY KHI NHẤN NÚT "Tính tiền điện"
 getEle('tinhEx3').addEventListener('click', () => {
-    xuLy();
+    xuLyEx3();
 });
 
 //KHAI BÁO CÁC BIẾN HẰNG SỐ DÙNG CHUNG
@@ -26,7 +26,7 @@ const GIA_DM_0 = 500, GIA_DM_1 = 650, GIA_DM_2 = 850, GIA_DM_3 = 1100, GIA_DM_4 
 const DM_1 = 50, DM_2 = 100, DM_3 = 200, DM_4 = 350;
 
 //HÀM XỬ LÝ
-xuLy = () => {
+xuLyEx3 = () => {
     var hoTen;
     var soKwDien;
 

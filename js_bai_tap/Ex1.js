@@ -17,7 +17,7 @@ function getEle(id) {
 }
 
 getEle('tinhEx1').addEventListener('click', () => {
-    xuLy();
+    xuLyEx1();
 });
 
 const KHU_VUC_A = 2; // khai báo các biến hằng số
@@ -27,7 +27,7 @@ const DOI_TUONG_1 = 2.5;
 const DOI_TUONG_2 = 1.5;
 const DOI_TUONG_3 = 1;
 
-xuLy = () => {
+xuLyEx1 = () => {
     // Đầu vào
     var nhapKhuVuc, nhapDoiTuong, kqEx1;
     var mon1, mon2, mon3, diemChuan, diem3Mon, tongDiem, diemKV, diemDT;
