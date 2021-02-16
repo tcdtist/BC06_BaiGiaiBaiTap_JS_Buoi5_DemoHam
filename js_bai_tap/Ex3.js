@@ -101,7 +101,7 @@ tinhTienDien = (soKw) => {
         soTienThanhToan = tinhDinhMuc4(soKw);
         kqDinhMuc5(soKw);
     }
-    kqTongTien = "Tổng tiền điện phải trả: " + soTienThanhToan + " VNĐ.";
+    kqTongTien = "Tổng tiền điện phải trả: " + formatMoney(soTienThanhToan) + " VNĐ.";
     console.log(kqTongTien);
     kqEx3.innerHTML += kqTongTien;
 };
@@ -111,8 +111,8 @@ kqDinhMuc1 = (soKw) => {
     var kqEx3 = getEle('kqEx3'); //tạo biến để gọn code
 
     (soKw <= DM_1) ?
-        kqEx3.innerHTML = "->" + DM_1 + "  đầu (" + GIA_DM_0 + "đ/Kw): " + soKw * GIA_DM_0 + " VNĐ." :
-        kqEx3.innerHTML = "->" + DM_1 + "  đầu (" + GIA_DM_0 + "đ/Kw): " + (DM_1 * GIA_DM_0) + " VNĐ.";
+        kqEx3.innerHTML = "->" + DM_1 + "  đầu (" + GIA_DM_0 + "đ/Kw): " + formatMoney(soKw * GIA_DM_0) + " VNĐ." :
+        kqEx3.innerHTML = "->" + DM_1 + "  đầu (" + GIA_DM_0 + "đ/Kw): " + formatMoney(DM_1 * GIA_DM_0) + " VNĐ.";
 
     kqEx3.appendChild(document.createElement('BR')); // xuống dòng khi in kết quả ra màn hình
 };
@@ -121,8 +121,8 @@ kqDinhMuc2 = (soKw) => {
     kqDinhMuc1(soKw);
 
     ((soKw > DM_1) && (soKw <= DM_2)) ?
-        kqEx3.innerHTML += "->" + DM_1 + " kế tiếp (" + GIA_DM_1 + "đ/Kw): " + ((soKw - DM_1) * GIA_DM_1) + " VNĐ." :
-        kqEx3.innerHTML += "->" + DM_1 + " kế (" + GIA_DM_1 + "đ/Kw): " + ((DM_2 - DM_1) * GIA_DM_1) + " VNĐ.";
+        kqEx3.innerHTML += "->" + DM_1 + " kế tiếp (" + GIA_DM_1 + "đ/Kw): " + formatMoney((soKw - DM_1) * GIA_DM_1) + " VNĐ." :
+        kqEx3.innerHTML += "->" + DM_1 + " kế (" + GIA_DM_1 + "đ/Kw): " + formatMoney((DM_2 - DM_1) * GIA_DM_1) + " VNĐ.";
 
     kqEx3.appendChild(document.createElement('BR'));
 };
@@ -131,8 +131,8 @@ kqDinhMuc3 = (soKw) => {
     kqDinhMuc2(soKw);
 
     ((soKw > DM_2) && (soKw <= DM_3)) ?
-        kqEx3.innerHTML += "->" + DM_2 + " kế (" + GIA_DM_2 + "đ/Kw): " + ((soKw - DM_2) * GIA_DM_2) + " VNĐ." :
-        kqEx3.innerHTML += "->" + DM_2 + " kế (" + GIA_DM_2 + "đ/Kw): " + ((DM_3 - DM_2) * GIA_DM_2) + " VNĐ.";
+        kqEx3.innerHTML += "->" + DM_2 + " kế (" + GIA_DM_2 + "đ/Kw): " + formatMoney((soKw - DM_2) * GIA_DM_2) + " VNĐ." :
+        kqEx3.innerHTML += "->" + DM_2 + " kế (" + GIA_DM_2 + "đ/Kw): " + formatMoney((DM_3 - DM_2) * GIA_DM_2) + " VNĐ.";
 
     kqEx3.appendChild(document.createElement('BR'));
 };
@@ -141,8 +141,8 @@ kqDinhMuc4 = (soKw) => {
     kqDinhMuc3(soKw);
 
     ((soKw > DM_3) && (soKw <= DM_4)) ?
-        kqEx3.innerHTML += "->" + (DM_3 - DM_1) + " kế (" + GIA_DM_3 + "đ/Kw): " + ((soKw - DM_3) * GIA_DM_3) + " VNĐ." :
-        kqEx3.innerHTML += "->" + (DM_3 - DM_1) + " kế (" + GIA_DM_3 + "đ/Kw): " + ((DM_4 - DM_3) * GIA_DM_3) + " VNĐ.";
+        kqEx3.innerHTML += "->" + (DM_3 - DM_1) + " kế (" + GIA_DM_3 + "đ/Kw): " + formatMoney((soKw - DM_3) * GIA_DM_3) + " VNĐ." :
+        kqEx3.innerHTML += "->" + (DM_3 - DM_1) + " kế (" + GIA_DM_3 + "đ/Kw): " + formatMoney((DM_4 - DM_3) * GIA_DM_3) + " VNĐ.";
 
     kqEx3.appendChild(document.createElement('BR'));
 };
@@ -150,7 +150,13 @@ kqDinhMuc5 = (soKw) => {
     var kqEx3 = getEle('kqEx3');
     kqDinhMuc4(soKw);
 
-    kqEx3.innerHTML += "->" + "Trên: " + DM_4 + "(" + GIA_DM_4 + "đ/Kw): " + ((soKw - DM_4) * GIA_DM_4) + " VNĐ.";
+    kqEx3.innerHTML += "->" + "Trên: " + DM_4 + "(" + GIA_DM_4 + "đ/Kw): " + formatMoney((soKw - DM_4) * GIA_DM_4) + " VNĐ.";
 
     kqEx3.appendChild(document.createElement('BR'));
 };
+
+formatMoney = (money) => {
+    var currentFormat = new Intl.NumberFormat("vn-VN");
+    var moneyFormat = currentFormat.format(money);
+    return moneyFormat;
+}
